@@ -2,7 +2,7 @@ package ru.geekbrains.android2.nasapicture
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ru.geekbrains.android2.nasapicture.ui.main.MainFragment
+import ru.geekbrains.android2.nasapicture.view.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
