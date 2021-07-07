@@ -69,6 +69,8 @@ class MainFragment : Fragment() {
             ).show()
             R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()
                 ?.add(R.id.container, SettingsFragment())?.addToBackStack(null)?.commit()
+            R.id.app_bar_test -> activity?.supportFragmentManager?.beginTransaction()
+                ?.add(R.id.container, TestFragment())?.addToBackStack(null)?.commit()
             R.id.app_bar_search -> Toast.makeText(
                 context, "Search",
                 Toast.LENGTH_SHORT
