@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.NasaPicture" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorAccent">?attr/colorSecondary</item>
         <item name="android:colorBackground">@color/background</item>
         <item name="colorOnBackground">@color/on_background</item>
         <item name="materialButtonStyle">@style/AppButton</item>
@@ -54,6 +55,7 @@
         <item name="colorOnError">@color/colorOnErrorDefault</item>
         <item name="colorSurface">@color/colorSurfaceDefault</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
+        <item name="colorAccent40Alfa">@color/secondaryColorDefault40Alfa</item>
     </style>
 
     <style name="Theme.NasaPicture.Mars" >
@@ -68,6 +70,7 @@
         <item name="colorOnError">@color/colorOnErrorDefault</item>
         <item name="colorSurface">@color/secondaryLightColorMars</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
+        <item name="colorAccent40Alfa">@color/secondaryColorMars40Alfa</item>
         <item name="fontFamily">@font/abhaya_libre</item>
         <item name="android:fontFamily">@font/abhaya_libre</item>
     </style>
@@ -85,6 +88,7 @@
         <item name="colorOnError">@color/colorOnErrorDefault</item>
         <item name="colorSurface">@color/secondaryLightColorMoon</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
+        <item name="colorAccent40Alfa">@color/secondaryColorMoon40Alfa</item>
         <item name="fontFamily">@font/prompt_extralight</item>
         <item name="android:fontFamily">@font/prompt_extralight</item>
     </style>
@@ -101,6 +105,7 @@
         <item name="colorOnError">@color/colorOnErrorDefault</item>
         <item name="colorSurface">@color/secondaryLightColorEarth</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
+        <item name="colorAccent40Alfa">@color/secondaryColorEarth40Alfa</item>
         <item name="fontFamily">@font/roboto_mono</item>
         <item name="android:fontFamily">@font/roboto_mono</item>
     </style>

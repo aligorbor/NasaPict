@@ -3,6 +3,7 @@
     <color name="primaryColorDefault">#212121</color>
     <color name="primaryDarkColorDefault">#000000</color>
     <color name="secondaryColorDefault">#2962FF</color>
+    <color name="secondaryColorDefault40Alfa">#662962FF</color>
     <color name="secondaryDarkColorDefault">#0039CB</color>
     <color name="primaryTextColorDefault">#FFFFFF</color>
     <color name="secondaryTextColorDefault">#FFFFFF</color>
@@ -23,6 +24,7 @@
     <color name="primaryLightColorMars">#ff844c</color>
     <color name="primaryDarkColorMars">#b91400</color>
     <color name="secondaryColorMars">#bcaaa4</color>
+    <color name="secondaryColorMars40Alfa">#66bcaaa4</color>
     <color name="secondaryLightColorMars">#efdcd5</color>
     <color name="secondaryDarkColorMars">#8c7b75</color>
     <color name="primaryTextColorMars">#000000</color>
@@ -32,6 +34,7 @@
     <color name="primaryLightColorMoon">#aab6fe</color>
     <color name="primaryDarkColorMoon">#49599a</color>
     <color name="secondaryColorMoon">#b2ebf2</color>
+    <color name="secondaryColorMoon40Alfa">#66b2ebf2</color>
     <color name="secondaryLightColorMoon">#e5ffff</color>
     <color name="secondaryDarkColorMoon">#81b9bf</color>
     <color name="primaryTextColorMoon">#000000</color>
@@ -41,6 +44,7 @@
     <color name="primaryLightColorEarth">#76d275</color>
     <color name="primaryDarkColorEarth">#00701a</color>
     <color name="secondaryColorEarth">#00b0ff</color>
+    <color name="secondaryColorEarth40Alfa">#6600b0ff</color>
     <color name="secondaryLightColorEarth">#69e2ff</color>
     <color name="secondaryDarkColorEarth">#0081cb</color>
     <color name="primaryTextColorEarth">#000000</color>

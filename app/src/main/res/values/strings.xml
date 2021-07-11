@@ -54,4 +54,10 @@
     <string name="tab_3">Tab 3</string>
     <string name="card">Card</string>
     <string name="test">Test</string>
+    <string name="next">Next</string>
+    <string name="date_prev"><![CDATA[<<<]]></string>
+    <string name="date_next"><![CDATA[>>>]]></string>
+    <string name="earth">Earth</string>
+    <string name="mars">Mars</string>
+    <string name="weather">Weather</string>
 </resources>

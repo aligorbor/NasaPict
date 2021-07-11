@@ -20,6 +20,9 @@ import kotlinx.android.synthetic.main.settings_fragment.*
 import ru.geekbrains.android2.nasapicture.MainActivity
 import ru.geekbrains.android2.nasapicture.R
 import ru.geekbrains.android2.nasapicture.util.strDateBeforeNow
+import ru.geekbrains.android2.nasapicture.util.toast
+import ru.geekbrains.android2.nasapicture.view.api.ApiActivity
+import ru.geekbrains.android2.nasapicture.view.api.ApiBottomActivity
 import ru.geekbrains.android2.nasapicture.viewmodel.MainViewModel
 import ru.geekbrains.android2.nasapicture.viewmodel.PictureOfTheDayData
 import java.util.*
@@ -63,10 +66,15 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> Toast.makeText(
-                context, "Favourite",
-                Toast.LENGTH_SHORT
-            ).show()
+            R.id.app_bar_api -> activity?.let { startActivity(Intent(it, ApiActivity::class.java)) }
+            R.id.app_bar_fav -> activity?.let {
+                startActivity(
+                    Intent(
+                        it,
+                        ApiBottomActivity::class.java
+                    )
+                )
+            }
             R.id.app_bar_settings -> activity?.supportFragmentManager?.beginTransaction()
                 ?.add(R.id.container, SettingsFragment())?.addToBackStack(null)?.commit()
             R.id.app_bar_test -> activity?.supportFragmentManager?.beginTransaction()
@@ -149,13 +157,6 @@ class MainFragment : Fragment() {
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-    }
-
-    private fun Fragment.toast(string: String?) {
-        Toast.makeText(context, string, Toast.LENGTH_SHORT).apply {
-            setGravity(Gravity.BOTTOM, 0, 250)
-            show()
-        }
     }
 
     companion object {

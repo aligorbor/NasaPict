@@ -1,17 +1,17 @@
 package ru.geekbrains.android2.nasapicture
 
-import android.content.Context
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatDelegate
+import ru.geekbrains.android2.nasapicture.util.configChanged
+import ru.geekbrains.android2.nasapicture.util.initTheme
 import ru.geekbrains.android2.nasapicture.view.MainFragment
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        initTheme()
+        initTheme(this@MainActivity)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
@@ -21,36 +21,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun initTheme() {
-        val currentTheme = getSharedPreferences(preferencesName, Context.MODE_PRIVATE)
-            .getInt(themeKey, R.style.Theme_NasaPicture_Earth)
-        setTheme(currentTheme)
-        val currentDark = getSharedPreferences(preferencesName, Context.MODE_PRIVATE)
-            .getBoolean(darkKey, false)
-        AppCompatDelegate.setDefaultNightMode(
-            if (currentDark)
-                AppCompatDelegate.MODE_NIGHT_YES
-            else
-                AppCompatDelegate.MODE_NIGHT_NO
-        )
-    }
-
     override fun onConfigurationChanged(newConfig: Configuration) {
-        val preferences =
-            getSharedPreferences(preferencesName, Context.MODE_PRIVATE)
-        val editor = preferences.edit()
-        val currNightMode = newConfig.uiMode and Configuration.UI_MODE_NIGHT_MASK
-        when (currNightMode) {
-            Configuration.UI_MODE_NIGHT_NO -> {
-                editor.putBoolean(darkKey, false)
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            }
-            Configuration.UI_MODE_NIGHT_YES -> {
-                editor.putBoolean(darkKey, true)
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-        }
-        editor.apply()
+        configChanged(this@MainActivity,newConfig)
 
         Toast.makeText(
             this,
