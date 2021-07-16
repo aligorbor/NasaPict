@@ -2,7 +2,9 @@
     <string name="app_name">NasaPicture</string>
     <string name="photo_of_the_day_stub">Photo of the day</string>
     <string name="search_wiki">Найти в Википедии</string>
+    <string name="search_text">Найти в тексте</string>
     <string name="wiki_helper_text">Поищите термин в википедии</string>
+    <string name="text_helper_text">Поищите термин в тексте</string>
     <string name="favourite">favourite</string>
     <string name="settings">settings</string>
     <string name="search">Search</string>
@@ -60,4 +62,12 @@
     <string name="earth">Earth</string>
     <string name="mars">Mars</string>
     <string name="weather">Weather</string>
+    <string name="title">Title</string>
+    <string name="titleEarth">EARTH</string>
+    <string name="titleMars">MARS</string>
+    <string name="titleWeather">WEATHER</string>
+    <string name="subtitle">Subtitle</string>
+    <string name="subtitleEarth">from space</string>
+    <string name="subtitleMars">Perseverance</string>
+    <string name="subtitleWeather">of space</string>
 </resources>

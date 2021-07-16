@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@layout/main_fragment_end"
+        motion:constraintSetStart="@layout/main_fragment_start"
+        motion:duration="700">
+        <OnClick motion:targetId="@id/chip_date2" />
+        <OnSwipe
+            motion:touchAnchorId="@id/input_layout"
+            motion:touchAnchorSide="middle"
+            motion:dragDirection="dragLeft"/>
+    </Transition>
+    <Transition
+        motion:constraintSetStart="@layout/main_fragment_end"
+        motion:constraintSetEnd="@layout/main_fragment_start"
+        motion:duration="700">
+        <OnClick motion:targetId="@id/chip_date2" />
+        <OnSwipe
+            motion:touchAnchorId="@id/input_layout_find"
+            motion:touchAnchorSide="middle"
+            motion:dragDirection="dragRight"/>
+    </Transition>
+
+</MotionScene>

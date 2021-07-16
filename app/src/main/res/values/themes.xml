@@ -43,6 +43,14 @@
         <item name="cornerSize">8dp</item>
     </style>
 
+    <style name="Theme.NasaPicture.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="TTheme.NasaPicture.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ToolBarWithNavigationBack">
+        <item name="navigationIcon">@drawable/abc_ic_ab_back_material</item>
+    </style>
+
     <style name="Theme.NasaPicture.Default" >
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/primaryColorDefault</item>
