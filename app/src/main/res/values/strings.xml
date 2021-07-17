@@ -32,8 +32,8 @@
     <string name="horizontal">horizontal</string>
     <string name="scroll">scroll</string>
     <string name="close_icon_listener">Close Icon Listener</string>
-    <string name="screen1">На экран 1</string>
-    <string name="screen2">На экран 2</string>
+    <string name="screen1">Transition</string>
+    <string name="screen2">ObjectAnimator</string>
     <string name="fab_demonstration">FAB demonstration</string>
     <string name="choose_theme">Choose Theme</string>
     <string name="theme_default">Default</string>
@@ -70,4 +70,18 @@
     <string name="subtitleEarth">from space</string>
     <string name="subtitleMars">Perseverance</string>
     <string name="subtitleWeather">of space</string>
+    <string name="screen3">ConstraintSet</string>
+    <string name="statelistanimator_example">StateListAnimator Example</string>
+    <string name="krater_description">На фото видно камни и песок в кратере Даниэлсона (диаметр кратера около 67 км), расположенного на юго-востоке области Arabia Terra.</string>
+    <string name="tap_for_info">Tap for info</string>
+    <string name="date_5_2018">5 июня 2018 г.</string>
+    <string name="krater_name">Кратер Даниэлсона</string>
+    <string name="show_description">Показать описание</string>
+    <string name="tap_on_me">TAP ON ME</string>
+    <string name="shuffle">SHUFFLE</string>
+    <string name="animate">Animate</string>
+    <string name="transitions_example">Transitions example</string>
+    <string name="path">Path</string>
+    <string name="option_1">Option 1</string>
+    <string name="option_2">Option 2</string>
 </resources>

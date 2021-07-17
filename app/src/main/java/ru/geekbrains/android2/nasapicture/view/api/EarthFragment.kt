@@ -2,11 +2,15 @@ package ru.geekbrains.android2.nasapicture.view.api
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.core.view.isInvisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.transition.*
 import coil.api.load
 import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 import kotlinx.android.synthetic.main.fragment_earth.*
@@ -26,6 +30,7 @@ class EarthFragment : Fragment() {
     }
     private var arrEpic = mutableListOf<EPICServerResponseData>()
     private var position = 0
+    private var isExpanded = false
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -39,7 +44,21 @@ class EarthFragment : Fragment() {
             renderData(it)
         })
         chip_next_earth.setOnClickListener {
-            getUrl()
+            getImage()
+        }
+        image_view_earth.setOnClickListener {
+            isExpanded = !isExpanded
+            TransitionManager.beginDelayedTransition(
+                container_earth, TransitionSet()
+                    .addTransition(ChangeBounds())
+                    .addTransition(ChangeImageTransform())
+            )
+            val params: ViewGroup.LayoutParams = image_view_earth.layoutParams
+            params.height = if (isExpanded) ViewGroup.LayoutParams.MATCH_PARENT else
+                ViewGroup.LayoutParams.WRAP_CONTENT
+            image_view_earth.layoutParams = params
+            image_view_earth.scaleType = if (isExpanded) ImageView.ScaleType.CENTER_CROP else
+                ImageView.ScaleType.FIT_CENTER
         }
     }
 
@@ -47,7 +66,7 @@ class EarthFragment : Fragment() {
         when (data) {
             is EpicData.Success -> {
                 arrEpic.addAll(data.serverResponseData)
-                getUrl()
+                getImage()
             }
             is EpicData.Loading -> {
             }
@@ -56,6 +75,13 @@ class EarthFragment : Fragment() {
                 Log.d("retrofit", data.error.message ?: "retrofit error")
             }
         }
+    }
+
+    private fun getImage() {
+        image_view_earth.visibility = View.GONE
+        getUrl()
+        TransitionManager.beginDelayedTransition(container_earth, Slide(Gravity.END))
+        image_view_earth.visibility = View.VISIBLE
     }
 
     private fun getUrl() {

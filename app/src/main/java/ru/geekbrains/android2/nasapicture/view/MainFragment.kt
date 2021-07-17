@@ -16,7 +16,6 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.bottom_sheet_layout.*
 import kotlinx.android.synthetic.main.main_fragment.*
-import kotlinx.android.synthetic.main.settings_fragment.*
 import ru.geekbrains.android2.nasapicture.MainActivity
 import ru.geekbrains.android2.nasapicture.R
 import ru.geekbrains.android2.nasapicture.util.strDateBeforeNow

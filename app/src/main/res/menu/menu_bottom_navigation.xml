@@ -9,5 +9,9 @@
             android:id="@+id/navigation_two"
             android:icon="@drawable/ic_send"
             android:title="@string/screen2" />
+        <item
+            android:id="@+id/navigation_three"
+            android:icon="@drawable/ic_sharp_cast_for_education_24"
+            android:title="@string/screen3" />
     </group>
 </menu>

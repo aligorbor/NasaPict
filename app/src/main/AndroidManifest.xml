@@ -13,7 +13,6 @@
             android:configChanges="uiMode">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -21,6 +20,10 @@
             android:configChanges="uiMode"/>
         <activity android:name=".view.api.ApiBottomActivity"
             android:configChanges="uiMode"/>
+        <activity android:name=".view.animations.AnimationsActivity" />
+        <activity android:name=".view.animations.ObjAnimatorActivity" />
+        <activity android:name=".view.animations.AnimationsActivityBonus" />
+
     </application>
 
 </manifest>
