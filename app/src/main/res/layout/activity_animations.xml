@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/transitions_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_animate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/animate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text_animate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/transitions_example"
+        android:visibility="gone" />
+
+    <include layout="@layout/activity_animations_explode" />
+
+    <include layout="@layout/activity_animations_enlarge" />
+
+    <include layout="@layout/activity_animations_path_transitions" />
+
+    <include layout="@layout/activity_animations_shuffle" />
+
+</LinearLayout>
