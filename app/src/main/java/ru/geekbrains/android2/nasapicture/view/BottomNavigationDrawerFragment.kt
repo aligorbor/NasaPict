@@ -12,6 +12,8 @@ import ru.geekbrains.android2.nasapicture.R
 import ru.geekbrains.android2.nasapicture.view.animations.AnimationsActivity
 import ru.geekbrains.android2.nasapicture.view.animations.AnimationsActivityBonus
 import ru.geekbrains.android2.nasapicture.view.animations.ObjAnimatorActivity
+import ru.geekbrains.android2.nasapicture.view.notes.NotesActivity
+import ru.geekbrains.android2.nasapicture.view.recycler.RecyclerActivity
 
 class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
 
@@ -36,7 +38,14 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                 R.id.navigation_three -> activity?.let {
                     startActivity(Intent(it, AnimationsActivityBonus::class.java))
                 }
+                R.id.navigation_four -> activity?.let {
+                    startActivity(Intent(it, RecyclerActivity::class.java))
+                }
+                R.id.navigation_five -> activity?.let {
+                    startActivity(Intent(it, NotesActivity::class.java))
+                }
             }
+            dismiss()
             true
         }
     }

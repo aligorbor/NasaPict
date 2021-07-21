@@ -23,6 +23,8 @@
         <activity android:name=".view.animations.AnimationsActivity" />
         <activity android:name=".view.animations.ObjAnimatorActivity" />
         <activity android:name=".view.animations.AnimationsActivityBonus" />
+        <activity android:name=".view.recycler.RecyclerActivity" />
+        <activity android:name=".view.notes.NotesActivity" />
 
     </application>
 

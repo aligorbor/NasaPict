@@ -80,7 +80,7 @@ class EarthFragment : Fragment() {
     private fun getImage() {
         image_view_earth.visibility = View.GONE
         getUrl()
-        TransitionManager.beginDelayedTransition(container_earth, Slide(Gravity.END))
+        TransitionManager.beginDelayedTransition(container_earth, Slide(Gravity.BOTTOM))
         image_view_earth.visibility = View.VISIBLE
     }
 

@@ -15,4 +15,11 @@
     <dimen name="collapsing_height">200dp</dimen>
     <dimen name="collapsing_marg_start">48dp</dimen>
     <dimen name="collapsing_marg_end">64dp</dimen>
+    <dimen name="notes_30">30dp</dimen>
+    <dimen name="notes_5">5dp</dimen>
+    <dimen name="notes_10">10dp</dimen>
+    <dimen name="notes_15">15dp</dimen>
+    <dimen name="notes_text_15">15sp</dimen>
+    <dimen name="notes_width_header">250dp</dimen>
+    <dimen name="notes_height_header">80dp</dimen>
 </resources>

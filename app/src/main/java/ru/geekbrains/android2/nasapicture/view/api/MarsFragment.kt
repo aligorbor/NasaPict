@@ -92,7 +92,7 @@ class MarsFragment : Fragment() {
     private fun getImage() {
         image_view_mars.visibility = View.GONE
         getUrl()
-        TransitionManager.beginDelayedTransition(container_mars, Slide(Gravity.END))
+        TransitionManager.beginDelayedTransition(container_mars, Slide(Gravity.BOTTOM))
         image_view_mars.visibility = View.VISIBLE
     }
 
