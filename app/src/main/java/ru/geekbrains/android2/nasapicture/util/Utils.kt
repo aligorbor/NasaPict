@@ -2,6 +2,13 @@ package ru.geekbrains.android2.nasapicture.util
 
 import android.content.Context
 import android.content.res.Configuration
+import android.graphics.Color
+import android.graphics.Typeface
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.SpannedString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.util.TypedValue
 import android.view.Gravity
 import android.widget.Toast
@@ -69,3 +76,19 @@ fun Fragment.toast(string: String?) {
         show()
     }
 }
+
+fun dateSpan(context: Context?, dateStr: String): Spannable {
+    val spannable = SpannableString(dateStr)
+    spannable.setSpan(
+        ForegroundColorSpan(context?.themeColor(R.attr.colorPrimaryVariant) ?: Color.RED),
+        8, spannable.length,
+        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+    )
+    spannable.setSpan(
+        StyleSpan(Typeface.BOLD),
+        8, spannable.length,
+        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+    )
+    return spannable
+}
+

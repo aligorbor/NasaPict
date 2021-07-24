@@ -1,6 +1,12 @@
 package ru.geekbrains.android2.nasapicture.view.api
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
@@ -14,7 +20,9 @@ import coil.api.load
 import kotlinx.android.synthetic.main.fragment_mars.*
 import ru.geekbrains.android2.nasapicture.R
 import ru.geekbrains.android2.nasapicture.model.MarsServerResponseData
+import ru.geekbrains.android2.nasapicture.util.dateSpan
 import ru.geekbrains.android2.nasapicture.util.strDateBeforeNow
+import ru.geekbrains.android2.nasapicture.util.themeColor
 import ru.geekbrains.android2.nasapicture.util.toast
 import ru.geekbrains.android2.nasapicture.viewmodel.MarsData
 import ru.geekbrains.android2.nasapicture.viewmodel.MarsViewModel
@@ -77,7 +85,7 @@ class MarsFragment : Fragment() {
                     image_view_mars.setImageResource(R.drawable.bg_mars)
                     arrMars.addAll(it)
                     getImage()
-                    chip_next_mars.text = strDateBeforeNow(numberDays)
+                    chip_next_mars.text = dateSpan(context,strDateBeforeNow(numberDays))
                 }
             }
             is MarsData.Loading -> {

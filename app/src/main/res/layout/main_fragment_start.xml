@@ -49,7 +49,7 @@
                 app:counterEnabled="true"
                 app:counterMaxLength="20"
                 app:endIconCheckable="true"
-                app:endIconDrawable="@drawable/ic_search"
+                app:endIconDrawable="@drawable/ic_search_r"
                 app:endIconMode="custom"
                 app:helperText="@string/text_helper_text"
                 app:layout_constraintBottom_toTopOf="@+id/scroll_chip_group"

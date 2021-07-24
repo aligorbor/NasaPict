@@ -26,6 +26,10 @@
         <activity android:name=".view.recycler.RecyclerActivity" />
         <activity android:name=".view.notes.NotesActivity" />
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

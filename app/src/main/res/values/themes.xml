@@ -64,6 +64,9 @@
         <item name="colorSurface">@color/colorSurfaceDefault</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
         <item name="colorAccent40Alfa">@color/secondaryColorDefault40Alfa</item>
+        <item name="fontFamily">@font/roboto_slab</item>
+        <item name="android:fontFamily">@font/roboto_slab</item>
+
     </style>
 
     <style name="Theme.NasaPicture.Mars" >
@@ -79,8 +82,8 @@
         <item name="colorSurface">@color/secondaryLightColorMars</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
         <item name="colorAccent40Alfa">@color/secondaryColorMars40Alfa</item>
-        <item name="fontFamily">@font/abhaya_libre</item>
-        <item name="android:fontFamily">@font/abhaya_libre</item>
+        <item name="fontFamily">@font/fredoka_one</item>
+        <item name="android:fontFamily">@font/fredoka_one</item>
     </style>
 
 
@@ -97,8 +100,8 @@
         <item name="colorSurface">@color/secondaryLightColorMoon</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
         <item name="colorAccent40Alfa">@color/secondaryColorMoon40Alfa</item>
-        <item name="fontFamily">@font/prompt_extralight</item>
-        <item name="android:fontFamily">@font/prompt_extralight</item>
+        <item name="fontFamily">@font/goblin_one</item>
+        <item name="android:fontFamily">@font/goblin_one</item>
     </style>
 
     <style name="Theme.NasaPicture.Earth">
@@ -114,8 +117,8 @@
         <item name="colorSurface">@color/secondaryLightColorEarth</item>
         <item name="colorOnSurface">@color/colorOnSurfaceDefault</item>
         <item name="colorAccent40Alfa">@color/secondaryColorEarth40Alfa</item>
-        <item name="fontFamily">@font/roboto_mono</item>
-        <item name="android:fontFamily">@font/roboto_mono</item>
+        <item name="fontFamily">@font/lemon</item>
+        <item name="android:fontFamily">@font/lemon</item>
     </style>
 
 </resources>

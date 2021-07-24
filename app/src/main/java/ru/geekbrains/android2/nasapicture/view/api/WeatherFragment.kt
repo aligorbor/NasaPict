@@ -1,6 +1,12 @@
 package ru.geekbrains.android2.nasapicture.view.api
 
+import android.graphics.Color
+import android.graphics.Typeface
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +17,9 @@ import androidx.lifecycle.ViewModelProvider
 import kotlinx.android.synthetic.main.fragment_weather.*
 import ru.geekbrains.android2.nasapicture.R
 import ru.geekbrains.android2.nasapicture.model.DONKIServerResponseData
+import ru.geekbrains.android2.nasapicture.util.dateSpan
 import ru.geekbrains.android2.nasapicture.util.strDateBeforeNow
+import ru.geekbrains.android2.nasapicture.util.themeColor
 import ru.geekbrains.android2.nasapicture.util.toast
 import ru.geekbrains.android2.nasapicture.viewmodel.DonkiData
 import ru.geekbrains.android2.nasapicture.viewmodel.WeatherViewModel
@@ -74,7 +82,28 @@ class WeatherFragment : Fragment() {
                     arrWeather.addAll(it)
                     getUrl()
                     val str = "${strDateBeforeNow(numberDaysFrom)} - ${strDateBeforeNow(numberDaysTo)}"
-                    chip_next_weather.text = str
+                    val spannable = SpannableString(str)
+                    spannable.setSpan(
+                        ForegroundColorSpan(context?.themeColor(R.attr.colorPrimaryVariant) ?: Color.RED),
+                        5, 7,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    spannable.setSpan(
+                        ForegroundColorSpan(context?.themeColor(R.attr.colorPrimaryVariant) ?: Color.RED),
+                        18, 20,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    spannable.setSpan(
+                        StyleSpan(Typeface.BOLD),
+                        5, 7,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    spannable.setSpan(
+                        StyleSpan(Typeface.BOLD),
+                        18, 20,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    chip_next_weather.text = spannable
                 }
             }
             is DonkiData.Loading -> {

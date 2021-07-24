@@ -1,8 +1,15 @@
 package ru.geekbrains.android2.nasapicture.view
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
+import android.graphics.Typeface.BOLD
 import android.net.Uri
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.view.*
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +26,9 @@ import kotlinx.android.synthetic.main.main_fragment.*
 import ru.geekbrains.android2.nasapicture.MainActivity
 import ru.geekbrains.android2.nasapicture.R
 import ru.geekbrains.android2.nasapicture.util.strDateBeforeNow
+import ru.geekbrains.android2.nasapicture.util.themeColor
 import ru.geekbrains.android2.nasapicture.util.toast
+import ru.geekbrains.android2.nasapicture.util.dateSpan
 import ru.geekbrains.android2.nasapicture.view.api.ApiActivity
 import ru.geekbrains.android2.nasapicture.view.api.ApiBottomActivity
 import ru.geekbrains.android2.nasapicture.viewmodel.MainViewModel
@@ -41,6 +50,11 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+//        activity?.let {
+//            bottom_sheet_description_header.typeface = Typeface.createFromAsset(it.assets,"Tastymatcha-nRaaM.ttf")
+//            bottom_sheet_description.typeface = Typeface.createFromAsset(it.assets,"Tastymatcha-nRaaM.ttf")
+//        }
+
         viewModel.getData(strDateBeforeNow(0)).observe(viewLifecycleOwner, {
             renderData(it)
         })
@@ -94,7 +108,7 @@ class MainFragment : Fragment() {
     private fun initChips() {
         var daysMinus = chip_date_group.childCount
         chip_date_group.children.toList().forEach {
-            (it as Chip).text = strDateBeforeNow(--daysMinus)
+            (it as Chip).text = dateSpan(context, strDateBeforeNow(--daysMinus))
             it.isChecked = (daysMinus == 0)
         }
 
@@ -142,7 +156,22 @@ class MainFragment : Fragment() {
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
                     bottom_sheet_description.text = serverResponseData.explanation
-                    bottom_sheet_description_header.text = serverResponseData.title
+                    val spannable = SpannableString(serverResponseData.title)
+                    spannable.setSpan(
+                        ForegroundColorSpan(
+                            context?.themeColor(R.attr.colorPrimaryVariant) ?: Color.RED
+                        ),
+                        0, 1,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    spannable.setSpan(
+                        ForegroundColorSpan(
+                            context?.themeColor(R.attr.colorSecondaryVariant) ?: Color.GRAY
+                        ),
+                        1, spannable.length,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                    )
+                    bottom_sheet_description_header.text = spannable
                 }
             }
             is PictureOfTheDayData.Loading -> {
