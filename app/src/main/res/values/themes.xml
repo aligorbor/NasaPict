@@ -121,4 +121,9 @@
         <item name="android:fontFamily">@font/lemon</item>
     </style>
 
+    <style name="Theme.NasaPicture.Splash">
+        <item
+            name="android:windowBackground">@drawable/splash_background_drawable</item>
+    </style>
+
 </resources>

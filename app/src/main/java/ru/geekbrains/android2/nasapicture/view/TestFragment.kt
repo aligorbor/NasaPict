@@ -10,15 +10,7 @@ import com.google.android.material.chip.Chip
 import kotlinx.android.synthetic.main.test_fragment.*
 import ru.geekbrains.android2.nasapicture.R
 
-class TestFragment : Fragment() {
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.test_fragment, container, false)
-    }
-
+class TestFragment : Fragment(R.layout.test_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         chipGroup.setOnCheckedChangeListener { chipGroup, position ->

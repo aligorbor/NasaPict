@@ -24,19 +24,13 @@ import ru.geekbrains.android2.nasapicture.viewmodel.EpicData
 private const val baseImageUrl = "https://epic.gsfc.nasa.gov/archive/natural/"
 private const val imageType = "png"
 
-class EarthFragment : Fragment() {
+class EarthFragment : Fragment(R.layout.fragment_earth) {
     private val viewModel: EarthViewModel by lazy {
         ViewModelProvider(this).get(EarthViewModel::class.java)
     }
     private var arrEpic = mutableListOf<EPICServerResponseData>()
     private var position = 0
     private var isExpanded = false
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_earth, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -26,7 +26,7 @@ import ru.geekbrains.android2.nasapicture.viewmodel.WeatherViewModel
 
 private const val period = 30
 
-class WeatherFragment : Fragment() {
+class WeatherFragment : Fragment(R.layout.fragment_weather) {
     private val viewModel: WeatherViewModel by lazy {
         ViewModelProvider(this).get(WeatherViewModel::class.java)
     }
@@ -34,13 +34,6 @@ class WeatherFragment : Fragment() {
     private var position = 0
     private var numberDaysFrom = period
     private var numberDaysTo = 0
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_weather, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

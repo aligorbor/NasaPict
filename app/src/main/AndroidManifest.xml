@@ -9,18 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NasaPicture.Default">
-        <activity android:name=".MainActivity"
-            android:configChanges="uiMode">
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".view.animations.AnimationsActivity" />
         <activity android:name=".view.api.ApiActivity"
             android:configChanges="uiMode"/>
         <activity android:name=".view.api.ApiBottomActivity"
             android:configChanges="uiMode"/>
-        <activity android:name=".view.animations.AnimationsActivity" />
+        <activity android:name=".MainActivity"
+            android:configChanges="uiMode"/>
         <activity android:name=".view.animations.ObjAnimatorActivity" />
         <activity android:name=".view.animations.AnimationsActivityBonus" />
         <activity android:name=".view.recycler.RecyclerActivity" />

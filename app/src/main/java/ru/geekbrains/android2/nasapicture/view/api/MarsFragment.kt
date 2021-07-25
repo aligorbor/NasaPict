@@ -27,7 +27,7 @@ import ru.geekbrains.android2.nasapicture.util.toast
 import ru.geekbrains.android2.nasapicture.viewmodel.MarsData
 import ru.geekbrains.android2.nasapicture.viewmodel.MarsViewModel
 
-class MarsFragment : Fragment() {
+class MarsFragment : Fragment(R.layout.fragment_mars) {
     private val viewModel: MarsViewModel by lazy {
         ViewModelProvider(this).get(MarsViewModel::class.java)
     }
@@ -35,13 +35,6 @@ class MarsFragment : Fragment() {
     private var position = 0
     private var numberDays = 1
     private var isExpanded = false
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_mars, container, false)
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
